@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+  <title>Ironhack Twitter</title>
+</head>
+<body>
+  <div id="container">
+    <img src="/images/twitter-logo.png" class="header-logo">
+    <%- body %>
+  </div>
+  <% if (typeof(errorMessage) !== "undefined") { %>
+  <div class="error-message"><%= errorMessage %></div>
+<% } %>
+
+
+</body>
+</html>
