@@ -6,7 +6,7 @@
     "Mario Verdyguer <verdyguer@gmail.com>"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/verdyguer/twitter-lab",
+  "homepage": "https://github.com/verdyguer/module2",
   "ignore": [
     "**/.*",
     "node_modules",

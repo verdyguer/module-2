@@ -7,17 +7,23 @@ const bodyParser         = require('body-parser');
 const expressLayouts     = require('express-ejs-layouts');
 const mongoose           = require('mongoose');
 const LocalStrategy      = require('passport-local').Strategy;
-const User               = require('./models/user');
+
 const bcrypt             = require('bcrypt');
 const passport           = require('passport');
 const session            = require('express-session');
 const MongoStore         = require('connect-mongo')(session);
+const flash              = require('connect-flash');
 
 mongoose.connect('mongodb://localhost:27017/ironfunds-development');
 
 const index = require('./routes/index');
 const auth  = require('./routes/auth');
+const campaigns  = require('./routes/campaigns');
+const rewards= require('./routes/rewards')
 
+const User     = require('./models/user');
+const Reward   = require('./models/reward');
+const Campaign = require ('./models/campaign');
 
 const app = express();
 // view engine setup
@@ -118,6 +124,8 @@ app.use( (req, res, next) => {
 
 app.use('/', index);
 app.use('/', auth);
+app.use('/campaigns', campaigns);
+app.use('/',rewards);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
